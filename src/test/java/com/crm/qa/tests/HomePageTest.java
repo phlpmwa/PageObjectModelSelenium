@@ -27,6 +27,9 @@ public class HomePageTest extends TestBase {
 	public void setUp() {
 		initialization();
 		loginPage = new LoginPage();
+		contactPage=new ContactPage();
+		dealsPage=new DealsPage();
+		tasksPage=new TasksPage();
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 
 	}

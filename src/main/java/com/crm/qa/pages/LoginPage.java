@@ -41,10 +41,11 @@ public class LoginPage extends TestBase {
 		return crmLogo.isDisplayed();
 	}
 	
-	public void login(String email, String password)
+	public HomePage login(String email, String password)
 	{   xpathLogin.click();
 		userMail.sendKeys(email);
 		userPass.sendKeys(password);
 		LoginBtn.click();
+		return new HomePage();
 	}
 }

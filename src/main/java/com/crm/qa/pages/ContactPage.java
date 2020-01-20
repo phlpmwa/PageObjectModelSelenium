@@ -2,6 +2,7 @@ package com.crm.qa.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.crm.qa.base.TestBase;
 
@@ -18,14 +19,23 @@ public class ContactPage extends TestBase {
 	@FindBy(name = "middle_name")
 	WebElement enterMiddleName;
 	
-	@FindBy(name="company")
+	@FindBy(xpath = "//div[@name='company']//input[@class='search']")
 	WebElement enterCompanyName;
 	
 	@FindBy(xpath = "//div[@class='ui active visible fluid multiple search selection dropdown']")
 	WebElement enterTag;
 	public ContactPage()
 	{
-		
+		PageFactory.initElements(driver, this);
 	}
 	
+	public ContactPage addUser()
+	{
+		andContactBtn.click();
+		enterFirstName.sendKeys("Philip");
+		enterMiddleName.sendKeys("Njuguna");
+		enterCompanyName.sendKeys("G-TECH");
+		//enterL.sendKeys("mwangi");
+		return new ContactPage();
+	}
 }

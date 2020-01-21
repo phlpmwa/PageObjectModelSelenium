@@ -19,6 +19,11 @@ public class ContactPage extends TestBase {
 	@FindBy(name = "middle_name")
 	WebElement enterMiddleName;
 	
+	@FindBy(xpath = "//input[@name='last_name']")
+	WebElement lastName;
+	@FindBy(xpath = "//i[@class='save icon']")
+	WebElement saveBtn;
+	
 	@FindBy(xpath = "//div[@name='company']//input[@class='search']")
 	WebElement enterCompanyName;
 	
@@ -34,7 +39,9 @@ public class ContactPage extends TestBase {
 		andContactBtn.click();
 		enterFirstName.sendKeys("Philip");
 		enterMiddleName.sendKeys("Njuguna");
+		lastName.sendKeys("Mwangi");
 		enterCompanyName.sendKeys("G-TECH");
+		saveBtn.click();
 		//enterL.sendKeys("mwangi");
 		return new ContactPage();
 	}

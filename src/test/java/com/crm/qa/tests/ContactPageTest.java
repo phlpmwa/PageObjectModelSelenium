@@ -31,12 +31,12 @@ public class ContactPageTest extends TestBase {
 		dealsPage=new DealsPage();
 		tasksPage=new TasksPage();
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
-
+        contactPage = homePage.clickOnContactsLink(); 
 	}
 	@Test
 	public void addUser()
 	{
-		contactPage=homePage.clickOnContactsLink().addUser();
+		contactPage.addUser();
 	}
 	
 	@AfterMethod
